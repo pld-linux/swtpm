@@ -1,7 +1,7 @@
 # TODO: handle selinux policy files
 #
 # Conditional build:
-%bcond_without	tests	# unit/functional tests
+%bcond_with	tests	# unit/functional tests (ptys required)
 
 Summary:	Software TPM Emulator
 Summary(pl.UTF-8):	Programowy emulator TPM
