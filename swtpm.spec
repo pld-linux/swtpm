@@ -6,13 +6,13 @@
 Summary:	Software TPM Emulator
 Summary(pl.UTF-8):	Programowy emulator TPM
 Name:		swtpm
-Version:	0.7.3
+Version:	0.8.0
 Release:	1
 License:	BSD
 Group:		Development/Tools
 #Source0Download: https://github.com/stefanberger/swtpm/releases
 Source0:	https://github.com/stefanberger/swtpm/archive/v%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	cd3a35094cbc627c07dd4d54c56c8e5b
+# Source0-md5:	1d084c2c4ea4a576e1b109eda86d551a
 URL:		https://github.com/stefanberger/swtpm
 BuildRequires:	autoconf >= 2.69
 BuildRequires:	automake >= 1:1.11
@@ -130,6 +130,9 @@ rm -rf $RPM_BUILD_ROOT
 %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/swtpm-localca.conf
 %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/swtpm-localca.options
 %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/swtpm_setup.conf
+%{_mandir}/man5/swtpm-localca.conf.5*
+%{_mandir}/man5/swtpm-localca.options.5*
+%{_mandir}/man5/swtpm_setup.conf.5*
 %{_mandir}/man8/swtpm.8*
 %{_mandir}/man8/swtpm-create-tpmca.8*
 %{_mandir}/man8/swtpm-localca.8*
@@ -139,10 +142,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_mandir}/man8/swtpm_ioctl.8*
 %{_mandir}/man8/swtpm_localca.8*
 %{_mandir}/man8/swtpm_setup.8*
-# FIXME: should be man5
-%{_mandir}/man8/swtpm-localca.conf.8*
-%{_mandir}/man8/swtpm-localca.options.8*
-%{_mandir}/man8/swtpm_setup.conf.8*
 
 %files devel
 %defattr(644,root,root,755)
